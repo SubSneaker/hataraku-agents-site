@@ -1,0 +1,612 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Hataraku Agents · Your agents at work</title>
+    <meta name="description" content="A local app that shows every AI coding agent on your machine as a pixel-art worker in an isometric office. Try the demo in your browser." />
+    <meta name="theme-color" content="#fefbee" />
+    <meta name="color-scheme" content="light" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Hataraku Agents" />
+    <meta property="og:description" content="Your agents at work. Every AI coding agent on your machine as a pixel-art worker in an isometric office." />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" type="image/png" href="./favicon.png" />
+    <link rel="apple-touch-icon" href="./apple-touch-icon.png" />
+    <script type="module" crossorigin src="./assets/index-DKBSgxru.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-CPpu1x6L.css">
+    <meta property="og:url" content="https://subsneaker.github.io/hataraku-agents-site/" />
+    <meta property="og:image" content="https://subsneaker.github.io/hataraku-agents-site/og.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:image" content="https://subsneaker.github.io/hataraku-agents-site/og.jpg" />
+    <link rel="canonical" href="https://subsneaker.github.io/hataraku-agents-site/" />
+  </head>
+  <body>
+    <svg class="icon-defs" aria-hidden="true" focusable="false">
+      <symbol id="i-copy" viewBox="0 0 24 24"><path d="M8 6h12v2H8zM4 2h12v2H4zm2 6h2v12H6zM2 4h2v12H2zm6 16h12v2H8zM20 8h2v12h-2zm-4-4h2v2h-2zM4 16h2v2H4z" /></symbol>
+      <symbol id="i-check" viewBox="0 0 24 24"><path d="M10 18H8v-2h2v2Zm-2-2H6v-2h2v2Zm4-2v2h-2v-2h2Zm-6 0H4v-2h2v2Zm8 0h-2v-2h2v2Zm2-2h-2v-2h2v2Zm2-2h-2V8h2v2Zm2-2h-2V6h2v2Z" /></symbol>
+      <symbol id="i-external" viewBox="0 0 24 24"><path d="M11 5H5v2h6V5ZM5 7H3v12h2V7Zm12 12H5v2h12v-2Zm2-6h-2v6h2v-6Zm-8 0H9v2h2v-2Zm2-2h-2v2h2v-2Zm2-2h-2v2h2V9Zm2-2h-2v2h2V7Zm2-2h-2v2h2V5Zm2-2h-2v8h2V3Z" /><path d="M21 3h-8v2h8V3Z" /></symbol>
+      <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4 11v2h16v-2zm12 2v2h2v-2zm-2 2v2h2v-2zm-2 2v2h2v-2zm4-6V9h2v2z" /><path d="M14 15V7h2v8zm-2 2V5h2v12z" /></symbol>
+      <symbol id="i-play" viewBox="0 0 24 24"><path d="M15 11h-2V9h2zm0 4h-2v-2h2zm-2 2h-2v-2h2zm0-8h-2V7h2zm-2-2H9V5h2zM9 21H7V3h2zm6-8h2v-2h-2zm-6 4h2v2H9z" /></symbol>
+      <symbol id="i-home" viewBox="0 0 24 24"><path d="M4 20h16v2H4zm16-10h2v10h-2zM2 10h2v10H2zm2-2h2v2H4zm2-2h2v2H6zm2-2h2v2H8zm2-2h4v2h-4zm4 2h2v2h-2zm2 2h2v2h-2zm2 2h2v2h-2zM8 14h2v6H8zm2-2h4v2h-4zm4 2h2v6h-2z" /></symbol>
+      <symbol id="i-building" viewBox="0 0 24 24"><path d="M5 2h14v2H5zm0 18h14v2H5zM3 4h2v16H3zm16 0h2v16h-2zM7 6h2v2H7zm4 0h2v2h-2zm4 0h2v2h-2zm-8 4h2v2H7zm4 0h2v2h-2zm4 0h2v2h-2zm-8 4h2v2H7zm4 0h2v2h-2zm-1 4h4v2h-4zm5-4h2v2h-2z" /></symbol>
+      <symbol id="i-users" viewBox="0 0 24 24"><path d="M5 2h6v2H5zm10 0h4v2h-4zM5 10h6v2H5zm10 0h4v2h-4zm4-6h2v6h-2zm-8 0h2v6h-2zM3 4h2v6H3zM0 18h2v4H0zm14 0h2v4h-2zm8 0h2v4h-2zM4 14h8v2H4zm12 0h4v2h-4zM2 16h2v2H2zm10 0h2v2h-2zm8 0h2v2h-2z" /></symbol>
+      <symbol id="i-coffee" viewBox="0 0 24 24"><path d="M4 4h16v2H4zm0 2h2v8H4zm2 8h10v2H6zm14-8h2v4h-2zm-2 4h2v2h-2zm-2-4h2v8h-2zM2 18h18v2H2z" /></symbol>
+      <symbol id="i-monitor" viewBox="0 0 24 24"><path d="M4 2h16v2H4zm0 14h16v2H4zM2 4h2v12H2zm18 0h2v12h-2zm-9 14h2v2h-2zm-3 2h8v2H8z" /></symbol>
+      <symbol id="i-gamepad" viewBox="0 0 24 24"><path d="M4 4h16v2H4zm0 14h16v2H4zM2 6h2v12H2zm18 0h2v12h-2zM8 9h2v6H8z" /><path d="M6 11h6v2H6zm8-2h2v2h-2zm2 4h2v2h-2z" /></symbol>
+      <symbol id="i-server" viewBox="0 0 24 24"><path d="M6 7h4v2H6zm0 8h4v2H6zM2 5h2v14H2zm18 0h2v14h-2zM4 19h16v2H4zM4 3h16v2H4zm0 8h16v2H4z" /></symbol>
+      <symbol id="i-terminal" viewBox="0 0 24 24"><path d="M4 2h16v2H4zm0 18h16v2H4zM2 4h2v16H2zm18 0h2v16h-2zM6 16h2v2H6zm2-2h2v2H8zm-2-2h2v2H6z" /></symbol>
+      <symbol id="i-lock" viewBox="0 0 24 24"><path d="M5 8h14v2H5zm0 12h14v2H5zM3 10h2v10H3zm16 0h2v10h-2zM7 4h2v4H7zm2-2h6v2H9zm6 2h2v4h-2z" /></symbol>
+      <symbol id="i-eye-off" viewBox="0 0 24 24"><path d="M0 10h2v4H0zm24 0h-2v4h2zm-8 0h-2v2h2zm-6 0H8v4h2zM2 8h2v2H2zm0 8h2v-2H2zm20-8h-2v2h2zm0 8h-2v-2h2zM4 6h4v2H4zm0 12h4v-2H4zM20 6h-4v2h4zM10 4h6v2h-6zM8 20h8v-2H8zm4-12h2v2h-2zm-2 6h4v2h-4zM8 8h2v2H8zm2 2h2v4h-2zm2 2h2v2h-2z" /><path d="M6 6h2v2H6zM4 4h2v2H4zM2 2h2v2H2zm12 12h2v2h-2zm2 2h2v2h-2zm2 2h2v2h-2zm2 2h2v2h-2z" /></symbol>
+      <symbol id="i-shield" viewBox="0 0 24 24"><path d="M4 2h16v2H4zM2 4h2v10H2zm18 0h2v10h-2zM4 14h2v2H4zm2 2h2v2H6zm4 4h4v2h-4zm10-6h-2v2h2zm-2 2h-2v2h2zm-2 2h-2v2h2zm-6 0H8v2h2z" /></symbol>
+      <symbol id="i-zap" viewBox="0 0 24 24"><path d="M4 13h8v6h2v2h-2v2h-2v-8H2v-4h2v2Zm12 6h-2v-2h2v2Zm2-2h-2v-2h2v2Zm2-2h-2v-2h2v2Zm-6-6h8v4h-2v-2h-8V5h-2V3h2V1h2v8Zm-8 2H4V9h2v2Zm2-2H6V7h2v2Zm2-2H8V5h2v2Z" /></symbol>
+      <symbol id="i-mail" viewBox="0 0 24 24"><path d="M6 8h2v2H6zm2 2h2v2H8zm10-2h-2v2h2zm-2 2h-2v2h2zm-6 2h4v2h-4zM2 6h2v12H2zm18 0h2v12h-2zM4 4h16v2H4zm0 14h16v2H4z" /></symbol>
+    </svg>
+
+    <a class="skip" href="#main">Skip to content</a>
+
+    <header class="topbar">
+      <a class="brand" href="#top" aria-label="Hataraku Agents, back to top">
+        <img class="brand-face px" src="./assets/face-maya-DRRB1MzP.png" width="42" height="42" alt="" />
+        <span class="brand-name">Hataraku Agents</span>
+      </a>
+      <nav class="topnav" aria-label="Sections">
+        <a href="#office">The office</a>
+        <a href="#demo">Demo</a>
+        <a href="#apps">Apps</a>
+        <a href="#build">Build mode</a>
+        <a href="#privacy">Privacy</a>
+        <a href="#install">Install</a>
+      </nav>
+      <a class="btn btn-small" href="demo/?demo=1">Open the demo</a>
+    </header>
+
+    <main id="main">
+      <!-- Lobby ------------------------------------------------------------------ -->
+      <section class="room room-lobby" id="top" data-room>
+        <div class="hero">
+          <div class="hero-art">
+            <picture>
+              <source type="image/avif" srcset="./assets/hero-640-Du6BYCGc.avif 640w, ./assets/hero-1000-DcEqesXj.avif 1000w, ./assets/hero-1600-BVXFVElE.avif 1600w" sizes="(min-width: 1100px) 66vw, 100vw" />
+              <source type="image/webp" srcset="./assets/hero-640-hFTVciFL.webp 640w, ./assets/hero-1000-ehDNK7Wf.webp 1000w, ./assets/hero-1600-BY8iov_x.webp 1600w" sizes="(min-width: 1100px) 66vw, 100vw" />
+              <img src="./assets/hero-1000-C4VRFZLO.png" width="1672" height="941" fetchpriority="high" alt="Illustration of a warm office with peach and sage walls. Two office workers run past the desks: a woman with a messy bun carrying a laptop and a man in glasses holding a coffee. Behind them colleagues work at monitors, fix a server rack and chat in a glass meeting room." />
+            </picture>
+          </div>
+
+          <div class="dialog">
+            <h1 class="dialog-name">Hataraku Agents</h1>
+            <p class="dialog-line">Your agents at work</p>
+            <p class="dialog-text">
+              Every AI coding agent on your machine shows up as a pixel-art worker in an isometric office.
+              You can see who is working, who finished and who is waiting for you. Click anyone to jump into their session.
+            </p>
+            <div class="actions">
+              <a class="btn" href="#demo">
+                <svg class="icon" aria-hidden="true"><use href="#i-play" /></svg>
+                Try the demo
+              </a>
+              <a class="btn btn-ghost" href="#install">Install it</a>
+            </div>
+            <p class="works-with">
+              <span class="label">Reads</span>
+              <span class="chip">Claude Code</span><span class="chip">Codex</span><span class="chip">T3 Code</span><span class="chip">Hermes</span><span class="chip">Cursor</span><span class="chip">Windsurf</span><span class="chip">Antigravity</span>
+            </p>
+            <span class="dialog-next" aria-hidden="true"></span>
+          </div>
+          <figure class="hero-peek">
+            <div class="screen">
+              <span class="screen-label">The real app · Lobby</span>
+              <video data-autoplay muted loop playsinline preload="none" width="800" height="500" poster="./assets/walk-in-Cr8sUARE.webp" aria-label="Liam checks in. He badges in at the lobby reception and walks toward his desk.">
+                <source src="./assets/walk-in-BOcLfcwF.mp4" type="video/mp4" />
+              </video>
+            </div>
+            <figcaption>Liam's session just started. He badges in at reception and heads for his desk.</figcaption>
+          </figure>
+        </div>
+
+        <div class="floor floor-wood" aria-hidden="true">
+          <span class="walker walk-right lane-a dur-slow">
+            <span class="worker" data-who="maya" data-pose="carry"></span>
+          </span>
+          <span class="walker walk-left lane-b dur-mid delay-2">
+            <span class="worker face-left" data-who="kenji" data-pose="walk"></span>
+          </span>
+          <span class="walker walk-right lane-b dur-fast delay-5">
+            <span class="worker" data-who="hugo" data-pose="walk"></span>
+          </span>
+          <span class="walker walk-left lane-a dur-slow delay-9">
+            <span class="worker face-left" data-who="aiko" data-pose="walk"></span>
+          </span>
+        </div>
+      </section>
+
+      <!-- Floor 01: statuses, rooms, boss desk -------------------------------------- -->
+      <section class="room room-peach" id="office" data-room aria-labelledby="office-title">
+        <div class="wrap">
+          <header class="section-head">
+            <p class="sign"><svg class="icon" aria-hidden="true"><use href="#i-building" /></svg>Floor 01</p>
+            <h2 id="office-title">One worker per session</h2>
+            <p class="lede">
+              When a session starts, a worker comes up the elevator, badges in at reception and sits down at a desk.
+              When it goes quiet they pack up and leave. Looks and first names come from the session id, so a resumed session comes back as the same person.
+            </p>
+          </header>
+
+          <ul class="statuses" aria-label="Worker statuses">
+            <li class="status" data-status="working">
+              <span class="scene" data-scene="working" role="img" aria-label="A worker typing at a desk with an orange outline and a spinning gear above him"></span>
+              <h3><span class="dot"></span>Working</h3>
+              <p>Orange outline and a spinning gear. A turn is in progress.</p>
+            </li>
+            <li class="status" data-status="idle">
+              <span class="scene" data-scene="idle" role="img" aria-label="A worker scrolling her phone at a desk with a blue outline and floating z's"></span>
+              <h3><span class="dot"></span>Idle</h3>
+              <p>Blue outline and zz. Checked in with nothing new for you.</p>
+            </li>
+            <li class="status" data-status="finished">
+              <span class="scene" data-scene="finished" role="img" aria-label="A worker cheering at a desk with a green outline and a check mark"></span>
+              <h3><span class="dot"></span>Finished</h3>
+              <p>Green check. Done and not looked at yet, so an envelope lands on your desk.</p>
+            </li>
+            <li class="status" data-status="blocked">
+              <span class="bubble bubble-alert" aria-hidden="true">Need approval</span>
+              <span class="scene" data-scene="blocked" role="img" aria-label="A worker raising her hand at a desk with a red outline"></span>
+              <h3><span class="dot"></span>Blocked</h3>
+              <p>Red outline. Waiting on a permission, a question or an error. Or it looks stuck.</p>
+            </li>
+          </ul>
+          <p class="aside-note">The badge shape carries the meaning too, so colour is never the only signal.</p>
+
+          <div class="split split-room">
+            <figure class="annotated">
+              <div class="annotated-frame">
+                <img src="./assets/shot-room-crop-Bt9qFJ1v.png" width="850" height="530" loading="lazy" decoding="async" alt="The Website project room in the app: a nameplate banner reading Website, feat/auth-flow, 2 open PRs; a CI monitor with a warning triangle; a PR ticket rail; a whiteboard; and a worker named Max raising his hand under a Need approval bubble." />
+                <span class="pin" data-pin="1" aria-hidden="true">1</span>
+                <span class="pin" data-pin="2" aria-hidden="true">2</span>
+                <span class="pin" data-pin="3" aria-hidden="true">3</span>
+                <span class="pin" data-pin="4" aria-hidden="true">4</span>
+                <span class="pin" data-pin="5" aria-hidden="true">5</span>
+              </div>
+              <figcaption>The Website room in demo mode. CI is failing and Max is waiting on an approval.</figcaption>
+            </figure>
+            <div class="split-text">
+              <h3 class="h3">A room per project</h3>
+              <p>Each git repo gets a department room. Everything in it means something.</p>
+              <ol class="legend">
+                <li><span><b>Nameplate.</b> Project name, current branch and a chip with the open PR count.</span></li>
+                <li><span><b>CI monitor.</b> Steady green check when passing, a spinner while running, a blinking warning triangle when failing.</span></li>
+                <li><span><b>PR ticket rail.</b> One ticket per open PR. Grey is draft, purple is open, a green stamp is approved and a red stamp is changes requested.</span></li>
+                <li><span><b>Whiteboard.</b> The lead agent's todo or plan progress.</span></li>
+                <li><span><b>A raised hand.</b> This worker needs you. The bubble stays up until you answer.</span></li>
+              </ol>
+              <p class="small">
+                Loose papers on the floor are uncommitted changes. Confetti means a PR just merged.
+                Subagents sit next to their lead, and worktrees get their own desk with a branch sign.
+              </p>
+            </div>
+          </div>
+
+          <div class="split split-boss">
+            <div class="boss-stage">
+              <span class="scene" data-scene="boss" role="img" aria-label="The Boss typing at a large desk in the corner office, with a stack of envelopes and a red one on top"></span>
+            </div>
+            <div class="split-text">
+              <h3 class="h3">The big desk is yours</h3>
+              <p>
+                You are the Boss. Finished work, approvals, questions and new PRs pile up as envelopes on the desk in the corner office.
+                Click the desk for the inbox, then click an envelope to jump to the worker.
+              </p>
+              <ul class="envelopes">
+                <li><img class="px" src="./assets/icon-envelope-eIo8foRY.png" width="24" height="24" alt="" /><span><b>Result.</b> A lead agent finished a turn.</span></li>
+                <li><img class="px" src="./assets/icon-envelope-red-CFMNxjcR.png" width="24" height="24" alt="" /><span><b>Approval.</b> An agent needs permission.</span></li>
+                <li><img class="px" src="./assets/icon-question-DC1Wy_6b.png" width="24" height="24" alt="" /><span><b>Question.</b> An agent asked you something.</span></li>
+                <li><img class="px" src="./assets/icon-pr-D41vocIL.png" width="24" height="24" alt="" /><span><b>Pull request.</b> An agent opened a PR.</span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="floor floor-carpet-green floor-tall" aria-hidden="true">
+          <span class="pr-rail">
+            <img class="px" src="./assets/prop-rail-tickets-QaL1JUuh.png" width="38" height="41" alt="" />
+            <img class="px pr-new-ticket" src="./assets/ticket-open-lvtgXlOF.png" width="9" height="12" alt="" />
+          </span>
+          <span class="walker courier">
+            <span class="worker courier-carry" data-who="kenji" data-pose="carry"></span>
+            <span class="worker courier-stand" data-who="kenji" data-pose="cheer"></span>
+            <span class="worker courier-back face-left" data-who="kenji" data-pose="walk"></span>
+          </span>
+        </div>
+      </section>
+
+      <!-- Meeting room: the live demo ------------------------------------------------ -->
+      <section class="room room-night" id="demo" data-room aria-labelledby="demo-title">
+        <div class="wrap">
+          <header class="section-head section-head-wide">
+            <p class="sign sign-light"><svg class="icon" aria-hidden="true"><use href="#i-users" /></svg>Meeting room</p>
+            <h2 id="demo-title">Try the office in your browser</h2>
+            <p class="lede">
+              This is the real app running in demo mode. The agents are simulated, so nothing on your machine is read and nothing is sent anywhere.
+            </p>
+          </header>
+
+          <div class="demo" data-demo data-state="idle">
+            <div class="demo-screen">
+              <picture class="demo-poster">
+                <source type="image/webp" srcset="./assets/shot-office-960-CGNrMyPH.webp 960w, ./assets/shot-office-vT7oB2t4.webp 1600w" sizes="(min-width: 1100px) 1100px, 100vw" />
+                <img src="./assets/shot-office-Bfcgh8a4.png" width="1600" height="1000" loading="lazy" decoding="async" alt="The office in demo mode: fourteen workers across project rooms, a kitchen, a library, a play room and the Boss office, with the sidebar and top bar around it." />
+              </picture>
+              <div class="demo-start">
+                <button class="btn btn-big" type="button" data-demo-start>
+                  <svg class="icon" aria-hidden="true"><use href="#i-play" /></svg>
+                  Start the demo here
+                </button>
+                <p>Loads the app in this page. About 1&nbsp;MB.</p>
+              </div>
+              <iframe class="demo-frame" title="Hataraku Agents demo" data-src="demo/?demo=1" allow="fullscreen"></iframe>
+            </div>
+            <div class="demo-bar">
+              <a class="btn btn-ghost btn-on-dark" href="demo/?demo=1" target="_blank" rel="noopener">
+                Open the full demo
+                <svg class="icon" aria-hidden="true"><use href="#i-external" /></svg>
+              </a>
+              <button class="btn btn-ghost btn-on-dark" type="button" data-demo-stop>Close the demo</button>
+              <p class="demo-hint">On a phone the full demo in its own tab is easier to use.</p>
+            </div>
+          </div>
+
+          <div class="try">
+            <h3 class="h3">Things to try</h3>
+            <ul class="try-list">
+              <li>Click a worker for the inspector. Chat and approvals work in the demo.</li>
+              <li>Hold <kbd>Alt</kbd> (<kbd>Option</kbd> on a Mac) to outline everything clickable.</li>
+              <li>Press <kbd>B</kbd> for build mode and drag some furniture around.</li>
+              <li>Click <b>Boss desk</b> in the sidebar for the inbox.</li>
+              <li>Press <kbd>A</kbd> to jump to the next worker who needs you.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="floor floor-carpet-blue floor-short" aria-hidden="true"></div>
+      </section>
+
+      <!-- Water cooler: clips ---------------------------------------------------------- -->
+      <section class="room room-sage" id="clips" data-room aria-labelledby="clips-title">
+        <div class="wrap">
+          <div class="clips-head">
+            <header class="section-head">
+              <p class="sign"><svg class="icon" aria-hidden="true"><use href="#i-coffee" /></svg>Water cooler</p>
+              <h2 id="clips-title">Overheard in the demo office</h2>
+              <p class="lede">Short loops recorded from demo mode. Idle workers take breaks, and the water cooler lines are templates filled in with real worker names.</p>
+            </header>
+            <div class="cooler" aria-hidden="true">
+              <span class="bubble cooler-line" data-line="1" data-side="a">Tests pass locally!</span>
+              <span class="bubble cooler-line" data-line="2" data-side="b">CI disagrees.</span>
+              <span class="bubble cooler-line" data-line="3" data-side="a">CI is wrong.</span>
+              <span class="bubble cooler-line" data-line="4" data-side="b">*sips water loudly*</span>
+              <span class="scene" data-scene="cooler"></span>
+            </div>
+          </div>
+
+          <div class="cams">
+            <figure class="cam cam-wide">
+              <div class="screen">
+                <span class="screen-label">Cam 01 · Website room</span>
+                <video data-autoplay muted loop playsinline preload="none" width="720" height="450" poster="./assets/merged-DUdEbvAP.webp" aria-label="PR 128 merges in the Website room. Confetti falls and the team raises their arms.">
+                  <source src="./assets/merged-C9daSNox.mp4" type="video/mp4" />
+                </video>
+              </div>
+              <figcaption><b>Merged.</b> PR #128 lands. Confetti over the Website room and the team cheers.</figcaption>
+            </figure>
+            <figure class="cam">
+              <div class="screen">
+                <span class="screen-label">Cam 02 · Website room</span>
+                <video data-autoplay muted loop playsinline preload="none" width="720" height="450" poster="./assets/message-CK1oI4Es.webp" aria-label="Ingrid walks over to Jonah's desk with a message and gets a reply.">
+                  <source src="./assets/message-BTPTTDGz.mp4" type="video/mp4" />
+                </video>
+              </div>
+              <figcaption><b>A message.</b> Ingrid walks over to Jonah's desk to talk. Agent-to-agent messages are errands too.</figcaption>
+            </figure>
+            <figure class="cam">
+              <div class="screen">
+                <span class="screen-label">Cam 03 · Water cooler</span>
+                <video data-autoplay muted loop playsinline preload="none" width="640" height="400" poster="./assets/cooler-e28ZQoPs.webp" aria-label="Two idle workers at the water cooler. One asks Friday deploy? The other says Absolutely not.">
+                  <source src="./assets/cooler-qhdkvzu5.mp4" type="video/mp4" />
+                </video>
+              </div>
+              <figcaption><b>A break.</b> "Friday deploy?" "Absolutely not."</figcaption>
+            </figure>
+            <figure class="cam cam-half">
+              <div class="screen">
+                <span class="screen-label">Cam 04 · Boss desk</span>
+                <video data-autoplay muted loop playsinline preload="none" width="1060" height="800" poster="./assets/inbox-BS6Zl2FK.webp" aria-label="The inbox opens from the sidebar. Clicking an approval jumps to Jonah, and approving sends him back to work.">
+                  <source src="./assets/inbox-BDeg5r1d.mp4" type="video/mp4" />
+                </video>
+              </div>
+              <figcaption><b>The inbox.</b> Click an approval, land on Jonah, approve. He gets back to work.</figcaption>
+            </figure>
+            <figure class="cam cam-half">
+              <div class="screen">
+                <span class="screen-label">Cam 05 · Holding Alt</span>
+                <video data-autoplay muted loop playsinline preload="none" width="960" height="600" poster="./assets/alt-reveal-BJrkRFG0.webp" aria-label="Holding the Alt key outlines every clickable worker, banner and desk in gold.">
+                  <source src="./assets/alt-reveal-BWiklail.mp4" type="video/mp4" />
+                </video>
+              </div>
+              <figcaption><b>Hold Alt.</b> Everything clickable gets a gold outline. Double-tap to keep it on.</figcaption>
+            </figure>
+          </div>
+        </div>
+        <div class="floor floor-tile floor-short" aria-hidden="true"></div>
+      </section>
+
+      <!-- Sources: what works with each app ------------------------------------------------ -->
+      <section class="room room-cream" id="apps" data-room aria-labelledby="apps-title">
+        <div class="wrap">
+          <header class="section-head section-head-wide">
+            <p class="sign"><svg class="icon" aria-hidden="true"><use href="#i-monitor" /></svg>Sources</p>
+            <h2 id="apps-title">What you can do from the office</h2>
+            <p class="lede">
+              Every app is read locally and read-only. Clicking any worker gives you <b>Open session</b>, which takes you to that session in its own app.
+              Some apps let you do more without leaving the office.
+            </p>
+          </header>
+
+          <div class="table-wrap">
+            <table class="apps">
+              <caption class="visually-hidden">Actions available from the office for each app</caption>
+              <thead>
+                <tr>
+                  <th scope="col">App</th>
+                  <th scope="col">Message</th>
+                  <th scope="col">Approve or deny</th>
+                  <th scope="col">Stop</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">T3 Code<span class="row-note">Connect T3 Code once in Settings.</span></th>
+                  <td data-label="Message"><span class="yes">Yes</span></td>
+                  <td data-label="Approve or deny"><span class="yes">Yes</span></td>
+                  <td data-label="Stop"><span class="yes">The running turn</span></td>
+                </tr>
+                <tr>
+                  <th scope="row">Claude Code</th>
+                  <td data-label="Message"><span class="yes">Idle sessions</span></td>
+                  <td data-label="Approve or deny"><span class="yes">With the Claude Code hook</span></td>
+                  <td data-label="Stop"><span class="yes">A session running in a terminal</span></td>
+                </tr>
+                <tr>
+                  <th scope="row">Codex</th>
+                  <td data-label="Message"><span class="yes">Idle threads while the Codex app is closed</span></td>
+                  <td data-label="Approve or deny"><span class="yes">With the Codex hook</span></td>
+                  <td data-label="Stop"><span class="no">No</span></td>
+                </tr>
+                <tr>
+                  <th scope="row">Hermes</th>
+                  <td data-label="Message"><span class="yes">Idle chats while Hermes isn't running</span></td>
+                  <td data-label="Approve or deny"><span class="no">No</span></td>
+                  <td data-label="Stop"><span class="yes">A session running in the terminal</span></td>
+                </tr>
+                <tr>
+                  <th scope="row">Cursor</th>
+                  <td data-label="Message"><span class="yes">Idle <code>cursor-agent</code> chats while Cursor is closed</span></td>
+                  <td data-label="Approve or deny"><span class="yes">Review and deny agent commands with the Cursor hook</span></td>
+                  <td data-label="Stop"><span class="no">No</span></td>
+                </tr>
+                <tr>
+                  <th scope="row">Windsurf, Antigravity<span class="row-note">Open the workspace.</span></th>
+                  <td data-label="Message"><span class="no">No</span></td>
+                  <td data-label="Approve or deny"><span class="no">No</span></td>
+                  <td data-label="Stop"><span class="no">No</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="small table-notes">
+            Connections and hooks are set up in <b>Settings &gt; Connections</b> with one click and removed the same way.
+            A message to an idle session runs as a new turn in the background, and the worker gets back to work in the office.
+            Windsurf support is covered by test fixtures only and hasn't been tried on a real install yet.
+          </p>
+        </div>
+      </section>
+
+      <!-- Build mode ----------------------------------------------------------------------- -->
+      <section class="room room-wood" id="build" data-room aria-labelledby="build-title">
+        <div class="wrap split split-build">
+          <div class="split-text">
+            <header class="section-head">
+              <p class="sign"><svg class="icon" aria-hidden="true"><use href="#i-home" /></svg>Build mode</p>
+              <h2 id="build-title">Rearrange the office</h2>
+            </header>
+            <p class="lede">
+              Press <kbd>B</kbd> to move furniture, add furnished rooms, restyle floors and make the floor bigger.
+              Your agents keep working while you build. Anyone whose desk moves walks over to the new one.
+            </p>
+            <p>Every edit is checked first. If it would make the office implausible, it's refused and the panel tells you why:</p>
+            <ul class="refusals">
+              <li>Ping-pong table overlaps the office chair</li>
+              <li>Couch needs free space in front</li>
+              <li>Nobody can get to the office chair</li>
+              <li>A desk chair is cut off from the elevator</li>
+            </ul>
+            <p class="small">Room templates: Department, Cubicles, Lounge, Kitchen, Play room and Meeting room. Undo keeps 100 steps.</p>
+          </div>
+          <figure class="cam build-cam">
+            <div class="screen">
+              <span class="screen-label">Build mode</span>
+              <video data-autoplay muted loop playsinline preload="none" width="1060" height="736" poster="./assets/build-BLEnO-d9.webp" aria-label="In build mode an arcade cabinet is picked from the catalog. It is refused over the lead desk, the boss chair and a lamp, then fits on an empty tile and gets placed.">
+                <source src="./assets/build-CIIKBIva.mp4" type="video/mp4" />
+              </video>
+            </div>
+            <figcaption>An arcade cabinet from the catalog gets refused three times before it finds a free tile.</figcaption>
+          </figure>
+        </div>
+        <div class="floor floor-wood floor-tall" aria-hidden="true">
+          <img class="prop prop-arcade px" src="./assets/prop-arcade-BdLQRIEY.png" width="29" height="48" alt="" />
+          <span class="walker mover">
+            <span class="worker" data-who="ravi" data-pose="carry"></span>
+          </span>
+        </div>
+      </section>
+
+      <!-- Play room: pet mode ---------------------------------------------------------- -->
+      <section class="room room-sage-light" id="pet" data-room aria-labelledby="pet-title">
+        <div class="wrap split split-pet">
+          <div class="split-text">
+            <header class="section-head">
+              <p class="sign"><svg class="icon" aria-hidden="true"><use href="#i-gamepad" /></svg>Play room</p>
+              <h2 id="pet-title">A small office for the corner of your screen</h2>
+            </header>
+            <p class="lede">
+              Pet mode frames the Boss office and the two busiest rooms in a small transparent page.
+              A strip at the top counts finished, idle, working and blocked workers. Click a worker for a card with <b>Open session</b>.
+            </p>
+            <p>Open <code>/?mode=pet</code> on your running office, or try the demo version.</p>
+            <p>
+              <a class="btn btn-ghost" href="demo/?mode=pet&amp;demo=1" target="_blank" rel="noopener">
+                Open the demo pet
+                <svg class="icon" aria-hidden="true"><use href="#i-external" /></svg>
+              </a>
+            </p>
+            <p class="small">It's a regular browser page for now, so it can't stay on top of other windows. A native always-on-top pet is on the roadmap.</p>
+          </div>
+          <div class="desktop" aria-hidden="true">
+            <div class="desktop-window">
+              <div class="desktop-titlebar"><span></span><span></span><span></span></div>
+              <img src="./assets/shot-pet-CLcqL-Jq.webp" width="480" height="360" loading="lazy" decoding="async" alt="" />
+            </div>
+          </div>
+        </div>
+        <div class="floor floor-playroom floor-tall" aria-hidden="true">
+          <span class="scene" data-scene="pingpong"></span>
+        </div>
+      </section>
+
+      <!-- Server room: privacy ---------------------------------------------------------- -->
+      <section class="room room-teal" id="privacy" data-room aria-labelledby="privacy-title">
+        <div class="wrap split split-privacy">
+          <header class="section-head">
+            <p class="sign sign-light"><svg class="icon" aria-hidden="true"><use href="#i-server" /></svg>Server room</p>
+            <h2 id="privacy-title">It stays on your machine</h2>
+            <p class="lede">The office only reads what your agent apps already keep on disk, and it never phones home.</p>
+          </header>
+          <dl class="rules">
+            <div class="rule">
+              <dt><svg class="icon" aria-hidden="true"><use href="#i-lock" /></svg>Local only</dt>
+              <dd>The daemon binds to <code>127.0.0.1</code>. Every request needs the access token in <code>~/.hataraku-agents/token</code>, which only your user account can read.</dd>
+            </div>
+            <div class="rule">
+              <dt><svg class="icon" aria-hidden="true"><use href="#i-eye-off" /></svg>Read-only</dt>
+              <dd>It never writes to any agent's files. SQLite databases are opened read-only, and files like <code>.env</code>, <code>auth.json</code> and OAuth credentials are skipped.</dd>
+            </div>
+            <div class="rule">
+              <dt><svg class="icon" aria-hidden="true"><use href="#i-shield" /></svg>Redacted</dt>
+              <dd>API keys, GitHub tokens, JWTs, private keys and auth headers are masked before anything leaves the daemon.</dd>
+            </div>
+            <div class="rule">
+              <dt><svg class="icon" aria-hidden="true"><use href="#i-zap" /></svg>No LLM calls</dt>
+              <dd>Nothing is sent to any model or service. The only network calls are <code>gh</code> requests for PR and CI state, and only if <code>gh</code> is installed and signed in.</dd>
+            </div>
+            <div class="rule">
+              <dt><svg class="icon" aria-hidden="true"><use href="#i-home" /></svg>One folder</dt>
+              <dd>The daemon writes only to <code>~/.hataraku-agents/</code>: its config, state, layout and event log.</dd>
+            </div>
+          </dl>
+        </div>
+        <div class="floor floor-tile floor-tall floor-dim" aria-hidden="true">
+          <span class="racks">
+            <img class="px" src="./assets/prop-server-C6UlPv6l.png" width="28" height="52" alt="" />
+            <img class="px" src="./assets/prop-server-C6UlPv6l.png" width="28" height="52" alt="" />
+            <img class="px" src="./assets/prop-server-C6UlPv6l.png" width="28" height="52" alt="" />
+          </span>
+          <span class="walker patrol">
+            <span class="worker patrol-sprite" data-who="leo" data-pose="walk"></span>
+          </span>
+        </div>
+      </section>
+
+      <!-- Reception: install -------------------------------------------------------------- -->
+      <section class="room room-cream" id="install" data-room aria-labelledby="install-title">
+        <div class="wrap split split-install">
+          <div class="split-text">
+            <header class="section-head">
+              <p class="sign"><svg class="icon" aria-hidden="true"><use href="#i-terminal" /></svg>Reception</p>
+              <h2 id="install-title">Run it</h2>
+            </header>
+            <p class="lede">From a checkout of the repo. You need Node.js 24 or newer (23.6 is the minimum) on macOS, Linux or Windows.</p>
+            <p>An authenticated <a href="https://cli.github.com/">GitHub CLI</a> adds PR and CI signals. Everything else works without it.</p>
+          </div>
+          <div class="commands">
+            <div class="cmd">
+              <div class="cmd-head">
+                <span>Start the office</span>
+                <button class="copy" type="button" data-copy="cmd-dev" aria-label="Copy the start commands">
+                  <svg class="icon" aria-hidden="true"><use href="#i-copy" /></svg>
+                  <span class="copy-idle">Copy</span><span class="copy-done">Copied</span>
+                </button>
+              </div>
+              <pre id="cmd-dev"><code>npm install
+npm run dev</code></pre>
+              <p class="cmd-note">The terminal prints a link like <code>http://localhost:5317/#token=…</code> and opens it. The token connects that tab to the daemon.</p>
+            </div>
+            <div class="cmd">
+              <div class="cmd-head">
+                <span>Demo without any agents</span>
+                <button class="copy" type="button" data-copy="cmd-demo" aria-label="Copy the demo command">
+                  <svg class="icon" aria-hidden="true"><use href="#i-copy" /></svg>
+                  <span class="copy-idle">Copy</span><span class="copy-done">Copied</span>
+                </button>
+              </div>
+              <pre id="cmd-demo"><code>npm run dev:web</code></pre>
+              <p class="cmd-note">Then open <code>http://localhost:5317/?demo=1</code>. Nothing on your machine is read.</p>
+            </div>
+            <div class="cmd">
+              <div class="cmd-head">
+                <span>Daily use</span>
+                <button class="copy" type="button" data-copy="cmd-prod" aria-label="Copy the production commands">
+                  <svg class="icon" aria-hidden="true"><use href="#i-copy" /></svg>
+                  <span class="copy-idle">Copy</span><span class="copy-done">Copied</span>
+                </button>
+              </div>
+              <pre id="cmd-prod"><code>npm run build &amp;&amp; npm start</code></pre>
+              <p class="cmd-note">The daemon serves everything itself and opens <code>http://127.0.0.1:4317/#token=…</code>.</p>
+            </div>
+            <p class="visually-hidden" role="status" data-copy-status></p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer" data-room>
+      <div class="wrap footer-grid">
+        <div class="footer-brand">
+          <picture>
+            <source type="image/avif" srcset="./assets/logo-640-Dep5_0W3.avif 640w, ./assets/logo-1000-CedJlvfT.avif 1000w" sizes="(min-width: 900px) 520px, 90vw" />
+            <source type="image/webp" srcset="./assets/logo-640-Dp6DNgZL.webp 640w, ./assets/logo-1000-Djau5m-D.webp 1000w" sizes="(min-width: 900px) 520px, 90vw" />
+            <img src="./assets/logo-1000-CEL1GASM.png" width="1774" height="887" loading="lazy" decoding="async" alt="Hataraku Agents logo: a chunky pixel wordmark with a woman leaning on it and a man in glasses running with a coffee." />
+          </picture>
+        </div>
+        <div class="footer-text">
+          <p class="footer-tagline">Your agents at work</p>
+          <p>
+            <span lang="ja">働く</span> (hataraku) means "to work". The name is a nod to the anime
+            <span lang="ja">働く細胞</span> (Hataraku Saibou, Cells at Work!).
+          </p>
+          <p class="small">Every screenshot and clip on this page comes from demo mode with simulated agents.</p>
+          <p class="footer-links">
+            <a href="demo/?demo=1">Live demo</a>
+            <a href="https://github.com/SubSneaker">Built by SubSneaker</a>
+          </p>
+        </div>
+      </div>
+      <div class="floor floor-lobby floor-tall" aria-hidden="true">
+        <span class="sign elevator-sign">Elevator</span>
+        <img class="prop prop-elevator px" src="./assets/prop-elevator-CDhdBIfu.png" width="32" height="56" alt="" />
+        <span class="walker checkout">
+          <span class="worker" data-who="zoe" data-pose="walk"></span>
+        </span>
+        <img class="prop prop-plant px" src="./assets/prop-bigplant-C3TXgU81.png" width="44" height="82" alt="" />
+      </div>
+    </footer>
+  </body>
+</html>
