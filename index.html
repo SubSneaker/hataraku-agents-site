@@ -4,17 +4,17 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Hataraku Agents · Your agents at work</title>
-    <meta name="description" content="A local app that shows every AI coding agent on your machine as a pixel-art worker in an isometric office. Try the demo in your browser." />
+    <meta name="description" content="Your AI coding agents, working in a pixel-art office. See who's busy, who's done and who needs you. Try the demo in your browser." />
     <meta name="theme-color" content="#fefbee" />
     <meta name="color-scheme" content="light" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Hataraku Agents" />
-    <meta property="og:description" content="Your agents at work. Every AI coding agent on your machine as a pixel-art worker in an isometric office." />
+    <meta property="og:description" content="Your AI coding agents, working in a pixel-art office. You're the boss." />
     <meta name="twitter:card" content="summary_large_image" />
     <link rel="icon" type="image/png" href="./favicon.png" />
     <link rel="apple-touch-icon" href="./apple-touch-icon.png" />
-    <script type="module" crossorigin src="./assets/index-DKBSgxru.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-CPpu1x6L.css">
+    <script type="module" crossorigin src="./assets/index-CZ6ScqJR.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-BdUrXQUN.css">
     <meta property="og:url" content="https://subsneaker.github.io/hataraku-agents-site/" />
     <meta property="og:image" content="https://subsneaker.github.io/hataraku-agents-site/og.jpg" />
     <meta property="og:image:width" content="1200" />
@@ -75,12 +75,11 @@
           </div>
 
           <div class="dialog">
-            <h1 class="dialog-name">Hataraku Agents</h1>
-            <p class="dialog-line">Your agents at work</p>
-            <p class="dialog-text">
-              Every AI coding agent on your machine shows up as a pixel-art worker in an isometric office.
-              You can see who is working, who finished and who is waiting for you. Click anyone to jump into their session.
-            </p>
+            <h1 class="visually-hidden">Hataraku Agents</h1>
+            <p class="dialog-name">Agents at Work</p>
+            <p class="dialog-line">Welcome, boss!</p>
+            <p class="dialog-text">All your agentic buddies are now in an office, living their daily lives with you!</p>
+            <p class="dialog-punch">No more losing track of what your agents are up to. You're the boss!</p>
             <div class="actions">
               <a class="btn" href="#demo">
                 <svg class="icon" aria-hidden="true"><use href="#i-play" /></svg>
@@ -89,19 +88,17 @@
               <a class="btn btn-ghost" href="#install">Install it</a>
             </div>
             <p class="works-with">
-              <span class="label">Reads</span>
+              <span class="label">Works with</span>
               <span class="chip">Claude Code</span><span class="chip">Codex</span><span class="chip">T3 Code</span><span class="chip">Hermes</span><span class="chip">Cursor</span><span class="chip">Windsurf</span><span class="chip">Antigravity</span>
             </p>
             <span class="dialog-next" aria-hidden="true"></span>
           </div>
           <figure class="hero-peek">
             <div class="screen">
-              <span class="screen-label">The real app · Lobby</span>
               <video data-autoplay muted loop playsinline preload="none" width="800" height="500" poster="./assets/walk-in-Cr8sUARE.webp" aria-label="Liam checks in. He badges in at the lobby reception and walks toward his desk.">
                 <source src="./assets/walk-in-BOcLfcwF.mp4" type="video/mp4" />
               </video>
             </div>
-            <figcaption>Liam's session just started. He badges in at reception and heads for his desk.</figcaption>
           </figure>
         </div>
 
@@ -126,37 +123,33 @@
         <div class="wrap">
           <header class="section-head">
             <p class="sign"><svg class="icon" aria-hidden="true"><use href="#i-building" /></svg>Floor 01</p>
-            <h2 id="office-title">One worker per session</h2>
-            <p class="lede">
-              When a session starts, a worker comes up the elevator, badges in at reception and sits down at a desk.
-              When it goes quiet they pack up and leave. Looks and first names come from the session id, so a resumed session comes back as the same person.
-            </p>
+            <h2 id="office-title">Who's working? Who's on their phone?</h2>
+            <p class="lede">One look at the floor and you know. No tabs, no terminals, no guessing.</p>
           </header>
 
           <ul class="statuses" aria-label="Worker statuses">
             <li class="status" data-status="working">
               <span class="scene" data-scene="working" role="img" aria-label="A worker typing at a desk with an orange outline and a spinning gear above him"></span>
               <h3><span class="dot"></span>Working</h3>
-              <p>Orange outline and a spinning gear. A turn is in progress.</p>
+              <p>Heads down. Do not disturb.</p>
             </li>
             <li class="status" data-status="idle">
               <span class="scene" data-scene="idle" role="img" aria-label="A worker scrolling her phone at a desk with a blue outline and floating z's"></span>
               <h3><span class="dot"></span>Idle</h3>
-              <p>Blue outline and zz. Checked in with nothing new for you.</p>
+              <p>Scrolling their phone. Give them something to do.</p>
             </li>
             <li class="status" data-status="finished">
               <span class="scene" data-scene="finished" role="img" aria-label="A worker cheering at a desk with a green outline and a check mark"></span>
               <h3><span class="dot"></span>Finished</h3>
-              <p>Green check. Done and not looked at yet, so an envelope lands on your desk.</p>
+              <p>Done, and quite proud of it. Check your desk.</p>
             </li>
             <li class="status" data-status="blocked">
               <span class="bubble bubble-alert" aria-hidden="true">Need approval</span>
               <span class="scene" data-scene="blocked" role="img" aria-label="A worker raising her hand at a desk with a red outline"></span>
               <h3><span class="dot"></span>Blocked</h3>
-              <p>Red outline. Waiting on a permission, a question or an error. Or it looks stuck.</p>
+              <p>Hand up. They need you.</p>
             </li>
           </ul>
-          <p class="aside-note">The badge shape carries the meaning too, so colour is never the only signal.</p>
 
           <div class="split split-room">
             <figure class="annotated">
@@ -168,22 +161,19 @@
                 <span class="pin" data-pin="4" aria-hidden="true">4</span>
                 <span class="pin" data-pin="5" aria-hidden="true">5</span>
               </div>
-              <figcaption>The Website room in demo mode. CI is failing and Max is waiting on an approval.</figcaption>
+              <figcaption>CI is red and Max has his hand up. Busy morning.</figcaption>
             </figure>
             <div class="split-text">
-              <h3 class="h3">A room per project</h3>
-              <p>Each git repo gets a department room. Everything in it means something.</p>
+              <h3 class="h3">A room for every project</h3>
+              <p>Branch, CI, pull requests and the plan, right there on the walls.</p>
               <ol class="legend">
-                <li><span><b>Nameplate.</b> Project name, current branch and a chip with the open PR count.</span></li>
-                <li><span><b>CI monitor.</b> Steady green check when passing, a spinner while running, a blinking warning triangle when failing.</span></li>
-                <li><span><b>PR ticket rail.</b> One ticket per open PR. Grey is draft, purple is open, a green stamp is approved and a red stamp is changes requested.</span></li>
-                <li><span><b>Whiteboard.</b> The lead agent's todo or plan progress.</span></li>
-                <li><span><b>A raised hand.</b> This worker needs you. The bubble stays up until you answer.</span></li>
+                <li><span><b>Nameplate.</b> Project, branch, open PRs.</span></li>
+                <li><span><b>CI monitor.</b> Green, spinning, or blinking red.</span></li>
+                <li><span><b>PR rail.</b> A ticket for every pull request.</span></li>
+                <li><span><b>Whiteboard.</b> The plan, ticked off as it goes.</span></li>
+                <li><span><b>Raised hand.</b> Someone needs you.</span></li>
               </ol>
-              <p class="small">
-                Loose papers on the floor are uncommitted changes. Confetti means a PR just merged.
-                Subagents sit next to their lead, and worktrees get their own desk with a branch sign.
-              </p>
+              <p class="small">Papers on the floor? Uncommitted changes. Confetti? Something just merged.</p>
             </div>
           </div>
 
@@ -193,15 +183,12 @@
             </div>
             <div class="split-text">
               <h3 class="h3">The big desk is yours</h3>
-              <p>
-                You are the Boss. Finished work, approvals, questions and new PRs pile up as envelopes on the desk in the corner office.
-                Click the desk for the inbox, then click an envelope to jump to the worker.
-              </p>
+              <p>Finished work, approvals and questions pile up on your desk as envelopes. Open one and you're at the right desk.</p>
               <ul class="envelopes">
-                <li><img class="px" src="./assets/icon-envelope-eIo8foRY.png" width="24" height="24" alt="" /><span><b>Result.</b> A lead agent finished a turn.</span></li>
-                <li><img class="px" src="./assets/icon-envelope-red-CFMNxjcR.png" width="24" height="24" alt="" /><span><b>Approval.</b> An agent needs permission.</span></li>
-                <li><img class="px" src="./assets/icon-question-DC1Wy_6b.png" width="24" height="24" alt="" /><span><b>Question.</b> An agent asked you something.</span></li>
-                <li><img class="px" src="./assets/icon-pr-D41vocIL.png" width="24" height="24" alt="" /><span><b>Pull request.</b> An agent opened a PR.</span></li>
+                <li><img class="px" src="./assets/icon-envelope-eIo8foRY.png" width="24" height="24" alt="" /><span><b>Result.</b> Work's done.</span></li>
+                <li><img class="px" src="./assets/icon-envelope-red-CFMNxjcR.png" width="24" height="24" alt="" /><span><b>Approval.</b> They need a yes.</span></li>
+                <li><img class="px" src="./assets/icon-question-DC1Wy_6b.png" width="24" height="24" alt="" /><span><b>Question.</b> They're asking you.</span></li>
+                <li><img class="px" src="./assets/icon-pr-D41vocIL.png" width="24" height="24" alt="" /><span><b>Pull request.</b> Fresh PR to review.</span></li>
               </ul>
             </div>
           </div>
@@ -225,10 +212,8 @@
         <div class="wrap">
           <header class="section-head section-head-wide">
             <p class="sign sign-light"><svg class="icon" aria-hidden="true"><use href="#i-users" /></svg>Meeting room</p>
-            <h2 id="demo-title">Try the office in your browser</h2>
-            <p class="lede">
-              This is the real app running in demo mode. The agents are simulated, so nothing on your machine is read and nothing is sent anywhere.
-            </p>
+            <h2 id="demo-title">Walk around the office</h2>
+            <p class="lede">The real app, with pretend agents. Nothing on your machine is touched.</p>
           </header>
 
           <div class="demo" data-demo data-state="idle">
@@ -252,18 +237,17 @@
                 <svg class="icon" aria-hidden="true"><use href="#i-external" /></svg>
               </a>
               <button class="btn btn-ghost btn-on-dark" type="button" data-demo-stop>Close the demo</button>
-              <p class="demo-hint">On a phone the full demo in its own tab is easier to use.</p>
+              <p class="demo-hint">On a phone? The full demo is comfier.</p>
             </div>
           </div>
 
           <div class="try">
             <h3 class="h3">Things to try</h3>
             <ul class="try-list">
-              <li>Click a worker for the inspector. Chat and approvals work in the demo.</li>
-              <li>Hold <kbd>Alt</kbd> (<kbd>Option</kbd> on a Mac) to outline everything clickable.</li>
-              <li>Press <kbd>B</kbd> for build mode and drag some furniture around.</li>
-              <li>Click <b>Boss desk</b> in the sidebar for the inbox.</li>
-              <li>Press <kbd>A</kbd> to jump to the next worker who needs you.</li>
+              <li>Click anyone to see what they're up to, and chat with them.</li>
+              <li>Hold <kbd>Alt</kbd> to light up everything clickable.</li>
+              <li>Press <kbd>B</kbd> and redecorate.</li>
+              <li>Press <kbd>A</kbd> to find whoever needs you.</li>
             </ul>
           </div>
         </div>
@@ -277,7 +261,6 @@
             <header class="section-head">
               <p class="sign"><svg class="icon" aria-hidden="true"><use href="#i-coffee" /></svg>Water cooler</p>
               <h2 id="clips-title">Overheard in the demo office</h2>
-              <p class="lede">Short loops recorded from demo mode. Idle workers take breaks, and the water cooler lines are templates filled in with real worker names.</p>
             </header>
             <div class="cooler" aria-hidden="true">
               <span class="bubble cooler-line" data-line="1" data-side="a">Tests pass locally!</span>
@@ -296,7 +279,7 @@
                   <source src="./assets/merged-C9daSNox.mp4" type="video/mp4" />
                 </video>
               </div>
-              <figcaption><b>Merged.</b> PR #128 lands. Confetti over the Website room and the team cheers.</figcaption>
+              <figcaption><b>Merged.</b> PR #128 lands. Confetti for everyone.</figcaption>
             </figure>
             <figure class="cam">
               <div class="screen">
@@ -305,7 +288,7 @@
                   <source src="./assets/message-BTPTTDGz.mp4" type="video/mp4" />
                 </video>
               </div>
-              <figcaption><b>A message.</b> Ingrid walks over to Jonah's desk to talk. Agent-to-agent messages are errands too.</figcaption>
+              <figcaption><b>A quick word.</b> Ingrid has notes for Jonah.</figcaption>
             </figure>
             <figure class="cam">
               <div class="screen">
@@ -323,7 +306,7 @@
                   <source src="./assets/inbox-BDeg5r1d.mp4" type="video/mp4" />
                 </video>
               </div>
-              <figcaption><b>The inbox.</b> Click an approval, land on Jonah, approve. He gets back to work.</figcaption>
+              <figcaption><b>The inbox.</b> One click to Jonah, one click to approve. Back to work.</figcaption>
             </figure>
             <figure class="cam cam-half">
               <div class="screen">
@@ -332,7 +315,7 @@
                   <source src="./assets/alt-reveal-BWiklail.mp4" type="video/mp4" />
                 </video>
               </div>
-              <figcaption><b>Hold Alt.</b> Everything clickable gets a gold outline. Double-tap to keep it on.</figcaption>
+              <figcaption><b>Hold Alt.</b> Everything clickable lights up.</figcaption>
             </figure>
           </div>
         </div>
@@ -343,12 +326,9 @@
       <section class="room room-cream" id="apps" data-room aria-labelledby="apps-title">
         <div class="wrap">
           <header class="section-head section-head-wide">
-            <p class="sign"><svg class="icon" aria-hidden="true"><use href="#i-monitor" /></svg>Sources</p>
-            <h2 id="apps-title">What you can do from the office</h2>
-            <p class="lede">
-              Every app is read locally and read-only. Clicking any worker gives you <b>Open session</b>, which takes you to that session in its own app.
-              Some apps let you do more without leaving the office.
-            </p>
+            <p class="sign"><svg class="icon" aria-hidden="true"><use href="#i-monitor" /></svg>Contractors</p>
+            <h2 id="apps-title">Bring your own agents</h2>
+            <p class="lede">The ones you already use. Click any worker to jump into their session, or handle it right from the office.</p>
           </header>
 
           <div class="table-wrap">
@@ -364,37 +344,37 @@
               </thead>
               <tbody>
                 <tr>
-                  <th scope="row">T3 Code<span class="row-note">Connect T3 Code once in Settings.</span></th>
+                  <th scope="row">T3 Code</th>
                   <td data-label="Message"><span class="yes">Yes</span></td>
                   <td data-label="Approve or deny"><span class="yes">Yes</span></td>
-                  <td data-label="Stop"><span class="yes">The running turn</span></td>
+                  <td data-label="Stop"><span class="yes">Yes</span></td>
                 </tr>
                 <tr>
                   <th scope="row">Claude Code</th>
-                  <td data-label="Message"><span class="yes">Idle sessions</span></td>
-                  <td data-label="Approve or deny"><span class="yes">With the Claude Code hook</span></td>
-                  <td data-label="Stop"><span class="yes">A session running in a terminal</span></td>
+                  <td data-label="Message"><span class="yes">When idle</span></td>
+                  <td data-label="Approve or deny"><span class="yes">With a hook</span></td>
+                  <td data-label="Stop"><span class="yes">In a terminal</span></td>
                 </tr>
                 <tr>
                   <th scope="row">Codex</th>
-                  <td data-label="Message"><span class="yes">Idle threads while the Codex app is closed</span></td>
-                  <td data-label="Approve or deny"><span class="yes">With the Codex hook</span></td>
+                  <td data-label="Message"><span class="yes">When idle</span></td>
+                  <td data-label="Approve or deny"><span class="yes">With a hook</span></td>
                   <td data-label="Stop"><span class="no">No</span></td>
                 </tr>
                 <tr>
                   <th scope="row">Hermes</th>
-                  <td data-label="Message"><span class="yes">Idle chats while Hermes isn't running</span></td>
+                  <td data-label="Message"><span class="yes">When idle</span></td>
                   <td data-label="Approve or deny"><span class="no">No</span></td>
-                  <td data-label="Stop"><span class="yes">A session running in the terminal</span></td>
+                  <td data-label="Stop"><span class="yes">In a terminal</span></td>
                 </tr>
                 <tr>
                   <th scope="row">Cursor</th>
-                  <td data-label="Message"><span class="yes">Idle <code>cursor-agent</code> chats while Cursor is closed</span></td>
-                  <td data-label="Approve or deny"><span class="yes">Review and deny agent commands with the Cursor hook</span></td>
+                  <td data-label="Message"><span class="yes">When idle</span></td>
+                  <td data-label="Approve or deny"><span class="yes">With a hook</span></td>
                   <td data-label="Stop"><span class="no">No</span></td>
                 </tr>
                 <tr>
-                  <th scope="row">Windsurf, Antigravity<span class="row-note">Open the workspace.</span></th>
+                  <th scope="row">Windsurf, Antigravity<span class="row-note">Watch and jump in.</span></th>
                   <td data-label="Message"><span class="no">No</span></td>
                   <td data-label="Approve or deny"><span class="no">No</span></td>
                   <td data-label="Stop"><span class="no">No</span></td>
@@ -402,11 +382,13 @@
               </tbody>
             </table>
           </div>
-          <p class="small table-notes">
-            Connections and hooks are set up in <b>Settings &gt; Connections</b> with one click and removed the same way.
-            A message to an idle session runs as a new turn in the background, and the worker gets back to work in the office.
-            Windsurf support is covered by test fixtures only and hasn't been tried on a real install yet.
-          </p>
+          <p class="small table-notes">Hooks and connections are one click in Settings. Windsurf hasn't been tried on a real install yet.</p>
+
+          <ul class="perks" aria-label="Also in the office">
+            <li><b>Hire at the front desk.</b> Start a new agent with a task and watch them walk in.</li>
+            <li><b>In your pocket.</b> Check on the office from your phone, over your own Tailscale.</li>
+            <li><b>Speaks your language.</b> Eighteen of them, from Español to 日本語.</li>
+          </ul>
         </div>
       </section>
 
@@ -416,29 +398,25 @@
           <div class="split-text">
             <header class="section-head">
               <p class="sign"><svg class="icon" aria-hidden="true"><use href="#i-home" /></svg>Build mode</p>
-              <h2 id="build-title">Rearrange the office</h2>
+              <h2 id="build-title">Make it yours</h2>
             </header>
-            <p class="lede">
-              Press <kbd>B</kbd> to move furniture, add furnished rooms, restyle floors and make the floor bigger.
-              Your agents keep working while you build. Anyone whose desk moves walks over to the new one.
-            </p>
-            <p>Every edit is checked first. If it would make the office implausible, it's refused and the panel tells you why:</p>
+            <p class="lede">Press <kbd>B</kbd> and redecorate. Your agents keep working, and anyone whose desk moves walks over to the new one.</p>
+            <p>Not every idea makes the cut:</p>
             <ul class="refusals">
               <li>Ping-pong table overlaps the office chair</li>
               <li>Couch needs free space in front</li>
               <li>Nobody can get to the office chair</li>
               <li>A desk chair is cut off from the elevator</li>
             </ul>
-            <p class="small">Room templates: Department, Cubicles, Lounge, Kitchen, Play room and Meeting room. Undo keeps 100 steps.</p>
           </div>
           <figure class="cam build-cam">
             <div class="screen">
-              <span class="screen-label">Build mode</span>
+              <span class="screen-label">Cam 06 · Build mode</span>
               <video data-autoplay muted loop playsinline preload="none" width="1060" height="736" poster="./assets/build-BLEnO-d9.webp" aria-label="In build mode an arcade cabinet is picked from the catalog. It is refused over the lead desk, the boss chair and a lamp, then fits on an empty tile and gets placed.">
                 <source src="./assets/build-CIIKBIva.mp4" type="video/mp4" />
               </video>
             </div>
-            <figcaption>An arcade cabinet from the catalog gets refused three times before it finds a free tile.</figcaption>
+            <figcaption>The arcade cabinet doesn't fit. Doesn't fit. Doesn't fit. Fits.</figcaption>
           </figure>
         </div>
         <div class="floor floor-wood floor-tall" aria-hidden="true">
@@ -455,20 +433,15 @@
           <div class="split-text">
             <header class="section-head">
               <p class="sign"><svg class="icon" aria-hidden="true"><use href="#i-gamepad" /></svg>Play room</p>
-              <h2 id="pet-title">A small office for the corner of your screen</h2>
+              <h2 id="pet-title">A tiny office for the corner of your screen</h2>
             </header>
-            <p class="lede">
-              Pet mode frames the Boss office and the two busiest rooms in a small transparent page.
-              A strip at the top counts finished, idle, working and blocked workers. Click a worker for a card with <b>Open session</b>.
-            </p>
-            <p>Open <code>/?mode=pet</code> on your running office, or try the demo version.</p>
+            <p class="lede">Pet mode shrinks things down to your office and the busiest rooms. Keep it open while you work.</p>
             <p>
               <a class="btn btn-ghost" href="demo/?mode=pet&amp;demo=1" target="_blank" rel="noopener">
                 Open the demo pet
                 <svg class="icon" aria-hidden="true"><use href="#i-external" /></svg>
               </a>
             </p>
-            <p class="small">It's a regular browser page for now, so it can't stay on top of other windows. A native always-on-top pet is on the roadmap.</p>
           </div>
           <div class="desktop" aria-hidden="true">
             <div class="desktop-window">
@@ -488,28 +461,28 @@
           <header class="section-head">
             <p class="sign sign-light"><svg class="icon" aria-hidden="true"><use href="#i-server" /></svg>Server room</p>
             <h2 id="privacy-title">It stays on your machine</h2>
-            <p class="lede">The office only reads what your agent apps already keep on disk, and it never phones home.</p>
+            <p class="lede">No cloud, no account, no telemetry. It only reads what your agent apps already keep on disk.</p>
           </header>
           <dl class="rules">
             <div class="rule">
               <dt><svg class="icon" aria-hidden="true"><use href="#i-lock" /></svg>Local only</dt>
-              <dd>The daemon binds to <code>127.0.0.1</code>. Every request needs the access token in <code>~/.hataraku-agents/token</code>, which only your user account can read.</dd>
+              <dd>Runs on your computer. Only your own devices get in.</dd>
             </div>
             <div class="rule">
               <dt><svg class="icon" aria-hidden="true"><use href="#i-eye-off" /></svg>Read-only</dt>
-              <dd>It never writes to any agent's files. SQLite databases are opened read-only, and files like <code>.env</code>, <code>auth.json</code> and OAuth credentials are skipped.</dd>
+              <dd>It looks at your agents' files. It never touches them.</dd>
             </div>
             <div class="rule">
               <dt><svg class="icon" aria-hidden="true"><use href="#i-shield" /></svg>Redacted</dt>
-              <dd>API keys, GitHub tokens, JWTs, private keys and auth headers are masked before anything leaves the daemon.</dd>
+              <dd>Keys and tokens are masked before they reach the screen.</dd>
             </div>
             <div class="rule">
               <dt><svg class="icon" aria-hidden="true"><use href="#i-zap" /></svg>No LLM calls</dt>
-              <dd>Nothing is sent to any model or service. The only network calls are <code>gh</code> requests for PR and CI state, and only if <code>gh</code> is installed and signed in.</dd>
+              <dd>The office doesn't call any AI. Your agents do the thinking.</dd>
             </div>
             <div class="rule">
               <dt><svg class="icon" aria-hidden="true"><use href="#i-home" /></svg>One folder</dt>
-              <dd>The daemon writes only to <code>~/.hataraku-agents/</code>: its config, state, layout and event log.</dd>
+              <dd>Everything it saves lives in <code>~/.hataraku-agents</code>.</dd>
             </div>
           </dl>
         </div>
@@ -531,10 +504,10 @@
           <div class="split-text">
             <header class="section-head">
               <p class="sign"><svg class="icon" aria-hidden="true"><use href="#i-terminal" /></svg>Reception</p>
-              <h2 id="install-title">Run it</h2>
+              <h2 id="install-title">Clock in</h2>
             </header>
-            <p class="lede">From a checkout of the repo. You need Node.js 24 or newer (23.6 is the minimum) on macOS, Linux or Windows.</p>
-            <p>An authenticated <a href="https://cli.github.com/">GitHub CLI</a> adds PR and CI signals. Everything else works without it.</p>
+            <p class="lede">Clone the repo and you're two commands away. Node.js 23.6 or newer, on macOS, Linux or Windows.</p>
+            <p>Signed in to the <a href="https://cli.github.com/">GitHub CLI</a>? You get PR and CI signals too.</p>
           </div>
           <div class="commands">
             <div class="cmd">
@@ -547,18 +520,18 @@
               </div>
               <pre id="cmd-dev"><code>npm install
 npm run dev</code></pre>
-              <p class="cmd-note">The terminal prints a link like <code>http://localhost:5317/#token=…</code> and opens it. The token connects that tab to the daemon.</p>
+              <p class="cmd-note">The office opens in your browser.</p>
             </div>
             <div class="cmd">
               <div class="cmd-head">
-                <span>Demo without any agents</span>
+                <span>Just the demo</span>
                 <button class="copy" type="button" data-copy="cmd-demo" aria-label="Copy the demo command">
                   <svg class="icon" aria-hidden="true"><use href="#i-copy" /></svg>
                   <span class="copy-idle">Copy</span><span class="copy-done">Copied</span>
                 </button>
               </div>
               <pre id="cmd-demo"><code>npm run dev:web</code></pre>
-              <p class="cmd-note">Then open <code>http://localhost:5317/?demo=1</code>. Nothing on your machine is read.</p>
+              <p class="cmd-note">Then open <code>localhost:5317/?demo=1</code>.</p>
             </div>
             <div class="cmd">
               <div class="cmd-head">
@@ -569,7 +542,7 @@ npm run dev</code></pre>
                 </button>
               </div>
               <pre id="cmd-prod"><code>npm run build &amp;&amp; npm start</code></pre>
-              <p class="cmd-note">The daemon serves everything itself and opens <code>http://127.0.0.1:4317/#token=…</code>.</p>
+              <p class="cmd-note">Builds once, then runs on its own.</p>
             </div>
             <p class="visually-hidden" role="status" data-copy-status></p>
           </div>
@@ -592,7 +565,7 @@ npm run dev</code></pre>
             <span lang="ja">働く</span> (hataraku) means "to work". The name is a nod to the anime
             <span lang="ja">働く細胞</span> (Hataraku Saibou, Cells at Work!).
           </p>
-          <p class="small">Every screenshot and clip on this page comes from demo mode with simulated agents.</p>
+          <p class="small">Every screenshot and clip here is from demo mode.</p>
           <p class="footer-links">
             <a href="demo/?demo=1">Live demo</a>
             <a href="https://github.com/SubSneaker">Built by SubSneaker</a>
