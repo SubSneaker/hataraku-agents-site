@@ -484,7 +484,7 @@
             </div>
             <div class="rule">
               <dt><svg class="icon" aria-hidden="true"><use href="#i-eye-off" /></svg>Read-only</dt>
-              <dd>It looks at your agents' files. It never touches them.</dd>
+              <dd>It reads your agents' sessions and never changes them. Settings changes for approvals and teamwork are backed up and undone when you uninstall.</dd>
             </div>
             <div class="rule">
               <dt><svg class="icon" aria-hidden="true"><use href="#i-shield" /></svg>Redacted</dt>
@@ -520,7 +520,7 @@
               <p class="sign"><svg class="icon" aria-hidden="true"><use href="#i-terminal" /></svg>Reception</p>
               <h2 id="install-title">Clock in</h2>
             </header>
-            <p class="lede">Clone the repo and you're two commands away. Node.js 23.6 or newer on macOS, Linux or Windows.</p>
+            <p class="lede">Install it from npm and you're two commands away. Node.js 23.6 or newer on macOS, Linux or Windows.</p>
             <p>Signed in to the <a href="https://cli.github.com/">GitHub CLI</a>? You get PR and CI signals too.</p>
           </div>
           <div class="commands">
@@ -532,8 +532,8 @@
                   <span class="copy-idle">Copy</span><span class="copy-done">Copied</span>
                 </button>
               </div>
-              <pre id="cmd-dev"><code>npm install
-npm run dev</code></pre>
+              <pre id="cmd-dev"><code>npm i -g hataraku-agents
+hataraku-agents</code></pre>
               <p class="cmd-note">The office opens in your browser.</p>
             </div>
             <div class="cmd">
@@ -544,19 +544,19 @@ npm run dev</code></pre>
                   <span class="copy-idle">Copy</span><span class="copy-done">Copied</span>
                 </button>
               </div>
-              <pre id="cmd-demo"><code>npm run dev:web</code></pre>
-              <p class="cmd-note">Then open <code>localhost:5317/?demo=1</code>.</p>
+              <pre id="cmd-demo"><code>npx hataraku-agents --only demo</code></pre>
+              <p class="cmd-note">An office full of pretend workers so you can look around first.</p>
             </div>
             <div class="cmd">
               <div class="cmd-head">
-                <span>Daily use</span>
-                <button class="copy" type="button" data-copy="cmd-prod" aria-label="Copy the production commands">
+                <span>Updating</span>
+                <button class="copy" type="button" data-copy="cmd-prod" aria-label="Copy the update command">
                   <svg class="icon" aria-hidden="true"><use href="#i-copy" /></svg>
                   <span class="copy-idle">Copy</span><span class="copy-done">Copied</span>
                 </button>
               </div>
-              <pre id="cmd-prod"><code>npm run build &amp;&amp; npm start</code></pre>
-              <p class="cmd-note">Builds once, then runs on its own.</p>
+              <pre id="cmd-prod"><code>npm i -g hataraku-agents@latest</code></pre>
+              <p class="cmd-note">The office offers to restart once the update is in.</p>
             </div>
             <p class="visually-hidden" role="status" data-copy-status></p>
           </div>
