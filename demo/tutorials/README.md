@@ -44,6 +44,10 @@ How it works (`scripts/capture-tutorials.ts`, scenes in `scripts/tutorials/`):
   need the live daemon. For those the page runs against a stand-in daemon
   (`scripts/tutorials/live.ts`): the demo office over the WebSocket, and a made-up setup for the
   `/api` routes those panels read. The pairing code is made up and blurred as well.
+- The linked offices clips (`offices-2` to `offices-5`) run in the demo with its linked offices
+  (`?demo=1&offices=1`, `web/src/officesDemo.ts`): three made-up offices with a few workers, and
+  Settings › Offices answered by the page itself, so no daemon is involved. The invites are made up
+  and blurred, and Copy never touches the machine's clipboard.
 - The page is recorded with Chromium's screencast, trimmed to the scene, cropped to the part that
   matters (16:9) and encoded to VP9 WebM, 960×540, 30 fps, no audio, with a short fade at both
   ends so the loop restarts softly. Two-pass encoding keeps each clip around 200 KB. The poster
